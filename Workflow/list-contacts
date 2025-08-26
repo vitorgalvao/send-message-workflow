@@ -1,0 +1,20 @@
+#!/usr/bin/osascript -l JavaScript
+
+JSON.stringify({
+  cache: { seconds: 30, loosereload: true },
+  items: Application("Messages").chats().flatMap(chat => {
+    try {
+      const id = chat.id()
+      const names = chat.participants.name().join(", ")
+      const handles = chat.participants.handle().join(", ")
+
+      return {
+        variables: { chat_names: names },
+        uid: id,
+        title: names,
+        subtitle: handles,
+        arg: id
+      }
+    } catch { return [] }
+  })
+})
