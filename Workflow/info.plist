@@ -738,7 +738,7 @@ Send URLs, files, and text from a selection or [Clipboard History](https://www.a
 		</dict>
 	</array>
 	<key>version</key>
-	<string>25.0</string>
+	<string>25.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/vitorgalvao/send-message-workflow/</string>
 </dict>
