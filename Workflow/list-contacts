@@ -5,7 +5,7 @@ JSON.stringify({
   items: Application("Messages").chats().flatMap(chat => {
     try {
       const id = chat.id()
-      const names = chat.participants.name().join(", ")
+      const names = chat.name() || chat.participants.name().join(", ")
       const handles = chat.participants.handle().join(", ")
 
       return {
