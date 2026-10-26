@@ -254,9 +254,9 @@
 }
 
 function run() {
-  Application("Messages").send(
+  Application("com.apple.MobileSMS").send(
     envVar("message_text"),
-    { to: Application("Messages").chats.byId(envVar("chat_id")) }
+    { to: Application("com.apple.MobileSMS").chats.byId(envVar("chat_id")) }
   )
 }</string>
 				<key>scriptargtype</key>
@@ -464,9 +464,9 @@ function run() {
       const tmpFile = $(tmpDir).stringByAppendingPathComponent(fileName).js
       fileManager.copyItemAtPathToPathError(file, tmpFile, undefined)
 
-      Application("Messages").send(
+      Application("com.apple.MobileSMS").send(
         Path(tmpFile),
-        { to: Application("Messages").chats.byId(envVar("chat_id")) }
+        { to: Application("com.apple.MobileSMS").chats.byId(envVar("chat_id")) }
       )
     })
 

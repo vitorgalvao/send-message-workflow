@@ -2,7 +2,7 @@
 
 JSON.stringify({
   cache: { seconds: 30, loosereload: true },
-  items: Application("Messages").chats().flatMap(chat => {
+  items: Application("com.apple.MobileSMS").chats().flatMap(chat => {
     try {
       const id = chat.id()
       const names = chat.name() || chat.participants.name().join(", ")
